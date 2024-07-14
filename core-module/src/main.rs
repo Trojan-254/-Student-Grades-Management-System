@@ -28,7 +28,7 @@ fn main() {
         match choice {
             1 => add_student(&mut grades),
             2 => view_grades(&grades),
-            3 => update_grade(&grades),
+            3 => update_grade(&mut grades),
             4 => delete_student(&mut grades),
             5 => list_students(&grades),
             6 => break,
