@@ -54,12 +54,14 @@ fn view_grades(grades: &HashMap<String, f32>) {
 }
 
 // Fuction to update student grade
-fn update_student(grades: &mut HashMap<String, f32>) {
+fn update_grade(grades: &mut HashMap<String, f32>) {
     let name = get_student_name();
     if grades.contains_key(&name) {
         let (new_name, new_grade) = get_student_info();
         grades.insert(new_name, new_grade);
         println!("🎉 Students grade updated succesfully!🎉");
+    } else {
+        println!("😔 Student not found! 😔");
     }
 }
 
