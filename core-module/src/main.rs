@@ -97,5 +97,5 @@ fn get_student_info() -> (String, f32) {
     let mut grade = String::new();
     println!("Please enter the student's grade!...");
     io::stdin().read_line(&mut grade).expect("Failed to readline!");
-    grade.trim().parse().expect("Please enter a valid grade")
+    (name, grade.trim().parse().expect("Please enter a valid grade"))
 }
