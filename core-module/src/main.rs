@@ -87,7 +87,7 @@ fn get_student_name() -> String {
     let mut name = String::new();
     println!("Please enter the student's name!...");
     io::stdin().readline(&mut name).expect("Failed to readline");
-    student = name.trim().to_string();
+    let student = name.trim().to_string();
     return student;
 }
 
