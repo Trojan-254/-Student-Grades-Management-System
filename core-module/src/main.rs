@@ -54,12 +54,12 @@ fn view_grades(grades: &HashMap<String, f32>) {
 }
 
 // Fuction to update student grade
-fn update_student(grades: &mut HashMap<String f32>) {
+fn update_student(grades: &mut HashMap<String, f32>) {
     let name = get_student_name();
     if grades.contains_key(&name) {
         let (new_name, new_grade) = get_student_info();
         grades.insert(new_name, new_grade);
-        println!("🎉 Students grade updated succesfully!🎉"),
+        println!("🎉 Students grade updated succesfully!🎉");
     }
 }
 
@@ -96,12 +96,6 @@ fn get_student_info() -> (String, f32) {
     let mut name = get_student_name();
     let mut grade = String::new();
     println!("Please enter the student's grade!...");
-    io::stdin.readline(&mut grade).expect("Failed to readline!");
-    if (grade > 100) {
-        Println!("Please enter a grade that is between 0 - 100!")
-    } else if (grade < 0) {
-        println!("Please enter a grade that is between 0 - 100!");
-    } else {
-        grade.trim().parse().expect("Please enter a valid grade");
-    }
+    io::stdin().readline(&mut grade).expect("Failed to readline!");
+    grade.trim().parse().expect("Please enter a valid grade")
 }
