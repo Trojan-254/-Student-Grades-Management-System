@@ -21,7 +21,7 @@ fn main() {
         println!("6. Exit");
 
         let mut choice = String::new(); //Declared variable to store the user's choice
-        io::stdin().readline(&mut choice).expect("Failed to readline"); // Get's the choice
+        io::stdin().read_line(&mut choice).expect("Failed to readline"); // Get's the choice
         let choice: u32 = choice.trim().parse().expect("Please choose one of the numbers listed");
 
         // We now match the choice to the requirements
@@ -86,7 +86,7 @@ fn delete_student(grades: &mut HashMap<String, f32>) {
 fn get_student_name() -> String {
     let mut name = String::new();
     println!("Please enter the student's name!...");
-    io::stdin().readline(&mut name).expect("Failed to readline");
+    io::stdin().read_line(&mut name).expect("Failed to readline");
     let student = name.trim().to_string();
     return student;
 }
@@ -96,6 +96,6 @@ fn get_student_info() -> (String, f32) {
     let mut name = get_student_name();
     let mut grade = String::new();
     println!("Please enter the student's grade!...");
-    io::stdin().readline(&mut grade).expect("Failed to readline!");
+    io::stdin().read_line(&mut grade).expect("Failed to readline!");
     grade.trim().parse().expect("Please enter a valid grade")
 }
